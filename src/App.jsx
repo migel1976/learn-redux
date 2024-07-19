@@ -9,7 +9,7 @@ const Container=styled.div`
 
 const App=()=>{
     const dispatch=useDispatch()
-    const cash=useSelector(state=>state.cash)
+    const cash=useSelector(state=>state.cash.cash)
     console.log('cash is', cash)
 
     const addCash=(cash)=>{
