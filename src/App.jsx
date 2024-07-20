@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { addCustomerAction, removeCustomerAction } from "./store/customerReducer";
 import { addCashAction, getCashAction } from "./store/cashReducer";
+import { fetchCustomers } from "./asyncActions/customers";
 
 const Container=styled.div`
     display:flex;
@@ -47,6 +48,8 @@ const App=()=>{
                 <button onClick={()=>getCash(Number(prompt('Get cash')))}>Get cash</button>
             </Container>
             <Container>
+
+                <button onClick={()=>dispatch(fetchCustomers())}>Add All Customer</button>
                 <button onClick={()=>addCustomer(prompt('Add customer'))}>Add Customer</button>
                 {/* <button onClick={()=>getCustomer(prompt('Get cash')))}>Get Customer</button> */}
             </Container>
